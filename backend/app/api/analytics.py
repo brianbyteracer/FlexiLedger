@@ -25,8 +25,11 @@ def get_dashboard_summary(db: Session = Depends(get_db)):
 
 @router.get("/monthly", response_model=MonthlyAnalyticsResponse)
 def get_monthly_analytics(db: Session = Depends(get_db)):
-    # Group by month (YYYY-MM)
-    month_expr = func.to_char(Transaction.transaction_timestamp, 'YYYY-MM')
+    is_sqlite = db.bind.dialect.name == "sqlite"
+    if is_sqlite:
+        month_expr = func.strftime('%Y-%m', Transaction.transaction_timestamp)
+    else:
+        month_expr = func.to_char(Transaction.transaction_timestamp, 'YYYY-MM')
     
     results = (
         db.query(
@@ -41,11 +44,12 @@ def get_monthly_analytics(db: Session = Depends(get_db)):
     
     data = []
     for row in results:
-        data.append({
-            "month": row.month,
-            "total_amount": row.total_amount or 0.0,
-            "transaction_count": row.transaction_count
-        })
+        if row.month:
+            data.append({
+                "month": row.month,
+                "total_amount": row.total_amount or 0.0,
+                "transaction_count": row.transaction_count
+            })
         
     return MonthlyAnalyticsResponse(data=data)
 
