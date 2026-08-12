@@ -1,4 +1,4 @@
-# Digital Alpha Technologies - Full Stack Assignment
+# FlexiLedger — Full Stack Fintech & Rewards Platform
 
 A premium, modern fintech dashboard built with Next.js, FastAPI, and PostgreSQL. It demonstrates highly performant data-grids, real-time filtering, data visualization, and an atomic rewards redemption backend.
 

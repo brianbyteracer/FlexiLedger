@@ -12,9 +12,9 @@ export function DashboardHeader() {
       <div className="container flex h-16 mx-auto px-4 items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold">
-            DA
+            FL
           </div>
-          <span className="font-bold text-xl hidden sm:inline-block">Digital Alpha</span>
+          <span className="font-bold text-xl hidden sm:inline-block">FlexiLedger</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">

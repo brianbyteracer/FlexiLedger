@@ -4,8 +4,8 @@ import { QueryProvider } from "@/components/providers/QueryProvider"
 import { DashboardHeader } from "@/components/layout/DashboardHeader"
 
 export const metadata: Metadata = {
-  title: "Digital Alpha Technologies",
-  description: "Digital Alpha Full Stack Assignment",
+  title: "FlexiLedger | Fintech Analytics & Rewards",
+  description: "High-performance transaction grid, spending analytics, and atomic rewards platform.",
 }
 
 export default function RootLayout({

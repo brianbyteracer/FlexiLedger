@@ -11,8 +11,8 @@ except Exception as e:
     print(f"Warning: Could not create tables. Database might not exist. Error: {e}")
 
 app = FastAPI(
-    title="Digital Alpha Technologies API",
-    description="Backend API for the Digital Alpha take-home assignment",
+    title="FlexiLedger API",
+    description="Backend API for the FlexiLedger Fintech & Rewards Platform",
     version="1.0.0",
 )
 
@@ -50,4 +50,4 @@ app.include_router(rewards.router, prefix="/api/rewards", tags=["rewards"])
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the Digital Alpha API. Check /api/health for status."}
+    return {"message": "Welcome to the FlexiLedger API. Check /api/health for status."}
